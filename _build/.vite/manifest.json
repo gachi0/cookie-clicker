@@ -1,0 +1,196 @@
+{
+  "_CanvasPool-o5oYjBOY.js": {
+    "file": "assets/CanvasPool-o5oYjBOY.js",
+    "name": "CanvasPool",
+    "imports": [
+      "_pixiedit-Ce6J96fj.js"
+    ]
+  },
+  "_HttpStatusCode-DjTx85av.js": {
+    "file": "assets/HttpStatusCode-DjTx85av.js",
+    "name": "HttpStatusCode"
+  },
+  "_SharedSystems-DyVshgZr.js": {
+    "file": "assets/SharedSystems-DyVshgZr.js",
+    "name": "SharedSystems",
+    "imports": [
+      "_pixiedit-Ce6J96fj.js",
+      "_colorToUniform-XYuM4Pby.js"
+    ]
+  },
+  "_button-CBlCC_3H.js": {
+    "file": "assets/button-CBlCC_3H.js",
+    "name": "button",
+    "imports": [
+      "_index-CEPlj1aD.js",
+      "_css-DYprkBZi.js"
+    ]
+  },
+  "_colorToUniform-XYuM4Pby.js": {
+    "file": "assets/colorToUniform-XYuM4Pby.js",
+    "name": "colorToUniform",
+    "imports": [
+      "_pixiedit-Ce6J96fj.js"
+    ]
+  },
+  "_css-DYprkBZi.js": {
+    "file": "assets/css-DYprkBZi.js",
+    "name": "css"
+  },
+  "_index-CEPlj1aD.js": {
+    "file": "assets/index-CEPlj1aD.js",
+    "name": "index"
+  },
+  "_pixiedit-Ce6J96fj.js": {
+    "file": "assets/pixiedit-Ce6J96fj.js",
+    "name": "pixiedit",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-CEPlj1aD.js",
+      "_button-CBlCC_3H.js",
+      "_css-DYprkBZi.js",
+      "_preload-helper-CM3UJVvY.js"
+    ],
+    "dynamicImports": [
+      "node_modules/pixi.js/lib/environment-browser/browserAll.mjs",
+      "node_modules/pixi.js/lib/environment-webworker/webworkerAll.mjs",
+      "node_modules/pixi.js/lib/rendering/renderers/gpu/WebGPURenderer.mjs",
+      "node_modules/pixi.js/lib/rendering/renderers/gl/WebGLRenderer.mjs"
+    ]
+  },
+  "_preload-helper-CM3UJVvY.js": {
+    "file": "assets/preload-helper-CM3UJVvY.js",
+    "name": "preload-helper"
+  },
+  "node_modules/pixi.js/lib/environment-browser/browserAll.mjs": {
+    "file": "assets/browserAll-CE-dv5c2.js",
+    "name": "browserAll",
+    "src": "node_modules/pixi.js/lib/environment-browser/browserAll.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "_pixiedit-Ce6J96fj.js",
+      "node_modules/pixi.js/lib/environment-webworker/webworkerAll.mjs",
+      "_index-CEPlj1aD.js",
+      "_button-CBlCC_3H.js",
+      "_css-DYprkBZi.js",
+      "_preload-helper-CM3UJVvY.js",
+      "_colorToUniform-XYuM4Pby.js",
+      "_CanvasPool-o5oYjBOY.js"
+    ]
+  },
+  "node_modules/pixi.js/lib/environment-webworker/webworkerAll.mjs": {
+    "file": "assets/webworkerAll-Dp7UHXG0.js",
+    "name": "webworkerAll",
+    "src": "node_modules/pixi.js/lib/environment-webworker/webworkerAll.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "_pixiedit-Ce6J96fj.js",
+      "_colorToUniform-XYuM4Pby.js",
+      "_CanvasPool-o5oYjBOY.js",
+      "_index-CEPlj1aD.js",
+      "_button-CBlCC_3H.js",
+      "_css-DYprkBZi.js",
+      "_preload-helper-CM3UJVvY.js"
+    ]
+  },
+  "node_modules/pixi.js/lib/rendering/renderers/gl/WebGLRenderer.mjs": {
+    "file": "assets/WebGLRenderer-DG8jHiLt.js",
+    "name": "WebGLRenderer",
+    "src": "node_modules/pixi.js/lib/rendering/renderers/gl/WebGLRenderer.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "_pixiedit-Ce6J96fj.js",
+      "_colorToUniform-XYuM4Pby.js",
+      "_SharedSystems-DyVshgZr.js",
+      "_index-CEPlj1aD.js",
+      "_button-CBlCC_3H.js",
+      "_css-DYprkBZi.js",
+      "_preload-helper-CM3UJVvY.js"
+    ]
+  },
+  "node_modules/pixi.js/lib/rendering/renderers/gpu/WebGPURenderer.mjs": {
+    "file": "assets/WebGPURenderer-CoHt3hXB.js",
+    "name": "WebGPURenderer",
+    "src": "node_modules/pixi.js/lib/rendering/renderers/gpu/WebGPURenderer.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "_pixiedit-Ce6J96fj.js",
+      "_colorToUniform-XYuM4Pby.js",
+      "_SharedSystems-DyVshgZr.js",
+      "_CanvasPool-o5oYjBOY.js",
+      "_index-CEPlj1aD.js",
+      "_button-CBlCC_3H.js",
+      "_css-DYprkBZi.js",
+      "_preload-helper-CM3UJVvY.js"
+    ]
+  },
+  "src/routes/[...404].tsx?pick=default&pick=$css": {
+    "file": "assets/_...404_-Dfn5izfM.js",
+    "name": "_...404_",
+    "src": "src/routes/[...404].tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-CEPlj1aD.js",
+      "_HttpStatusCode-DjTx85av.js"
+    ]
+  },
+  "src/routes/about.tsx?pick=default&pick=$css": {
+    "file": "assets/about-14R1SQvS.js",
+    "name": "about",
+    "src": "src/routes/about.tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-CEPlj1aD.js",
+      "_css-DYprkBZi.js",
+      "_button-CBlCC_3H.js"
+    ]
+  },
+  "src/routes/cookie.tsx?pick=default&pick=$css": {
+    "file": "assets/cookie-D0KXU_9q.js",
+    "name": "cookie",
+    "src": "src/routes/cookie.tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-CEPlj1aD.js",
+      "_css-DYprkBZi.js",
+      "_button-CBlCC_3H.js"
+    ]
+  },
+  "src/routes/pixiedit.tsx?pick=default&pick=$css": {
+    "file": "assets/pixiedit-pP_4DcjB.js",
+    "name": "pixiedit",
+    "src": "src/routes/pixiedit.tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "imports": [
+      "_index-CEPlj1aD.js",
+      "_button-CBlCC_3H.js",
+      "_css-DYprkBZi.js",
+      "_pixiedit-Ce6J96fj.js",
+      "_preload-helper-CM3UJVvY.js"
+    ]
+  },
+  "virtual:$vinxi/handler/client": {
+    "file": "assets/client-CiIJKWE4.js",
+    "name": "client",
+    "src": "virtual:$vinxi/handler/client",
+    "isEntry": true,
+    "imports": [
+      "_index-CEPlj1aD.js",
+      "_preload-helper-CM3UJVvY.js",
+      "_css-DYprkBZi.js",
+      "_HttpStatusCode-DjTx85av.js"
+    ],
+    "dynamicImports": [
+      "src/routes/about.tsx?pick=default&pick=$css",
+      "src/routes/cookie.tsx?pick=default&pick=$css",
+      "src/routes/pixiedit.tsx?pick=default&pick=$css",
+      "src/routes/[...404].tsx?pick=default&pick=$css"
+    ],
+    "css": [
+      "assets/client-1gI8Ij6z.css"
+    ]
+  }
+}
