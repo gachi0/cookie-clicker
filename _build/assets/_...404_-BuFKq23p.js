@@ -1,1 +1,0 @@
-import{c as t,g as e,t as o,T as a}from"./index-Du18fccQ.js";import{H as r}from"./HttpStatusCode-DjTx85av.js";var n=o("<h1>ページなかったわ");function s(){return[t(a,{children:"Not Found"}),t(r,{code:404}),e(n)]}export{s as default};
