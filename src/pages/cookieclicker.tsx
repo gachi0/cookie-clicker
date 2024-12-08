@@ -12,9 +12,9 @@ const Page: Component = () => {
 
     const interval = setInterval(() => {
       setCookies(
-        cookies() + (RCSum(auto) / 10n)
+        cookies() + RCSum(auto)
       );
-    }, 100);
+    }, 1000);
 
     onCleanup(() => {
       clearInterval(interval);
