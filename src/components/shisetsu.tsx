@@ -1,10 +1,10 @@
 import { Component, Show } from "solid-js";
 import { Button, Label } from "./button";
 import { Column, Row } from "./layout";
-import { cookies, getCost, setCookies, setShops, StoreType } from "../signals";
+import { cookies, getCost, ShopType } from "../signals";
 
 export const Shisetsu: Component<{
-  store: StoreType;
+  store: ShopType;
   onclick: () => void;
 }> = (props) => {
   return <Row style={{
