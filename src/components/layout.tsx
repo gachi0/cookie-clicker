@@ -1,14 +1,13 @@
-import { Component, JSX, JSXElement } from "solid-js";
+import { JSX, ParentComponent } from "solid-js";
 import { css } from "../../styled-system/css";
 
 
 type LeyoutBasePropType = {
-  children: JSXElement;
   style?: JSX.CSSProperties;
 };
 
 
-export const Column: Component<
+export const Column: ParentComponent<
   LeyoutBasePropType
 > = (props) => <div
   class={css({
@@ -21,7 +20,7 @@ export const Column: Component<
 </div>;
 
 
-export const Row: Component<
+export const Row: ParentComponent<
   LeyoutBasePropType
 > = (props) => <div
   class={css({

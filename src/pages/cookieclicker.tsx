@@ -1,7 +1,7 @@
 import { css } from "../../styled-system/css";
 import { Component, createEffect, onCleanup } from "solid-js";
 import { Column, Row } from "../components/layout";
-import { cookies, getAllCps, getClicks, setCookies, shops } from "../signals";
+import { auto, cookies, getClicks, getCost, RCSum, setAuto, setCookies, setShops, shops } from "../signals";
 import { Button, Label } from "../components/button";
 import { Shisetsu } from "../components/shisetsu";
 
@@ -12,7 +12,7 @@ const Page: Component = () => {
 
     const interval = setInterval(() => {
       setCookies(
-        cookies() + (getAllCps(shops) / 10n)
+        cookies() + (RCSum(auto) / 10n)
       );
     }, 100);
 
@@ -30,7 +30,7 @@ const Page: Component = () => {
       />
       <Label
         label="時速"
-        txt={getAllCps(shops).toString()}
+        txt={RCSum(auto).toString()}
       />
     </Row>
     <p class={css({ fontSize: 50 })}>
@@ -43,7 +43,28 @@ const Page: Component = () => {
         setCookies(cookies() + getClicks(shops));
       }}
     />
-    {shops.map((v, i) => <Shisetsu store={v} i={i} />)}
+    <Row style={{ gap: "8px" }}>
+      <Column>
+        <p class={css({ fontSize: "24px" })}>クリック強化</p>
+        {shops.map((v, i) => <Shisetsu
+          store={v}
+          onclick={() => {
+            setCookies(cookies() - getCost(v));
+            setShops(i, "count", v.count + 1n);
+          }}
+        />)}
+      </Column>
+      <Column>
+        <p class={css({ fontSize: "24px" })}>時速強化</p>
+        {auto.map((v, i) => <Shisetsu
+          store={v}
+          onclick={() => {
+            setCookies(cookies() - getCost(v));
+            setAuto(i, "count", v.count + 1n);
+          }}
+        />)}
+      </Column>
+    </Row>
   </Column>;
 };
 
