@@ -1,6 +1,7 @@
 import { Component, JSX, JSXElement } from "solid-js";
 import { css, Styles } from "../../styled-system/css";
 import { A } from "@solidjs/router";
+import { RouteNames } from "../paths";
 
 
 const BUTTON_CSS: Styles = {
@@ -43,7 +44,7 @@ export const Button: Component<{
 
 
 export const Link: Component<{
-  href: string;
+  href: RouteNames;
   children: JSXElement;
 }> = (props) => <A
   class={css(BUTTON_CSS_ENABLE)}

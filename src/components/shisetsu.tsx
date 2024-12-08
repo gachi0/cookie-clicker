@@ -1,11 +1,11 @@
 import { Component, Show } from "solid-js";
 import { Button, Label } from "./button";
 import { Column, Row } from "./layout";
-import { cookies, setCookies, setShops, StoreType } from "../signals";
+import { cookies, getCost, setCookies, setShops, StoreType } from "../signals";
 
 export const Shisetsu: Component<{
   store: StoreType;
-  i: number;
+  onclick: () => void;
 }> = (props) => {
   return <Row style={{
     "justify-content": "space-between",
@@ -15,36 +15,26 @@ export const Shisetsu: Component<{
   }}>
 
     <Row style={{ "align-items": "center", "gap": "8px" }}>
-      ×{props.store.count.toString()}
+      ×{`${props.store.count}`}
       <Column>
         {props.store.name}
         <Label
           label="コスト"
-          txt={`-${props.store.cost}`}
+          txt={`-${getCost(props.store)}`}
         />
         <Row style={{ gap: "6px" }}>
           <Label
-            label="クリック"
+            label="報酬"
             txt={`+${props.store.reward}`}
           />
-          <Show when={props.store.cps}>
-            <Label
-              label="時速"
-              txt={`+${props.store.cps}`}
-            />
-          </Show>
         </Row>
       </Column>
     </Row>
 
     <Button
       children="強化"
-      disabled={cookies() < props.store.cost}
-      callback={() => {
-        console.log(cookies());
-        setShops(props.i, "count", props.store.count + 1n);
-        setCookies(cookies() - props.store.cost);
-      }}
+      disabled={cookies() < getCost(props.store)}
+      callback={props.onclick}
     />
 
   </Row>;

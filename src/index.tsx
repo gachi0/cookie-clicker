@@ -1,9 +1,10 @@
 /* @refresh reload */
 import { render, Suspense } from 'solid-js/web';
-import { Route, Router } from '@solidjs/router';
-import { Component, lazy, ParentComponent } from 'solid-js';
+import { HashRouter, Route, Router } from '@solidjs/router';
+import { lazy, ParentComponent } from 'solid-js';
 import "./index.css";
 import { css } from '../styled-system/css';
+import { routes } from './paths';
 
 const root = document.getElementById('root');
 
@@ -21,24 +22,12 @@ const App: ParentComponent = (props) => <>
   })}>
     {props.children}
   </main>
-
 </>;
 
-render(() => <Router
-  base='cookie-clicker'
+render(() => <HashRouter
   root={App}>
-
-  <Route
-    path="/"
-    component={lazy(() => import("./pages/top"))}
-  />
-  <Route
-    path="/cookie/"
-    component={lazy(() => import("./pages/cookieclicker"))}
-  />
-
-
-
-
-
-</Router>, root!);
+  {Object.entries(routes).map((v) => <Route
+    path={v[0]}
+    component={lazy(v[1])}
+  />)}
+</HashRouter>, root!);
