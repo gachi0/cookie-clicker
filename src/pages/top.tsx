@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
 import { Column } from "../components/layout";
-import { Link } from "../components/button";
+import { Link, LinkURL } from "../components/button";
 
 
 const Page: Component = () => {
@@ -10,6 +10,7 @@ const Page: Component = () => {
     <h1>COOKIE CLICKER</h1>
     <Link href="/cookie" children="クッキー" />
     <Link href="/" children="メニュー" />
+    <LinkURL href="https://google.com" children="辞める" />
   </Column>;
 };
 

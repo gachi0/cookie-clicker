@@ -1,4 +1,4 @@
-import { Component, JSX, JSXElement } from "solid-js";
+import { Component, JSX, JSXElement, ParentComponent } from "solid-js";
 import { css, Styles } from "../../styled-system/css";
 import { A } from "@solidjs/router";
 import { RouteNames } from "../paths";
@@ -42,16 +42,17 @@ export const Button: Component<{
   />;
 };
 
-
-export const Link: Component<{
-  href: RouteNames;
-  children: JSXElement;
+export const LinkURL: ParentComponent<{
+  href: string;
 }> = (props) => <A
   class={css(BUTTON_CSS_ENABLE)}
   href={props.href}
   children={props.children}
 />;
 
+export const Link: ParentComponent<{
+  href: RouteNames;
+}> = (p) => <LinkURL {...p} />;
 
 export const Label: Component<{
   label: string, txt: string;
