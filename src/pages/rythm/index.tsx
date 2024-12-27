@@ -3,24 +3,21 @@ import { Column, Row } from "../../components/layout";
 import { songs } from "./data";
 import { SongItem } from "./song";
 import { CurrentSong } from "./currntsong";
-import { createStore } from "solid-js/store";
-
 
 const SongSelect: Component = () => {
 
-  let [selectingI, setSelectingI] = createSignal(0);
-  const [stSongs, setSongs] = createStore<Song[]>(songs);
+  const [selectingI, setSelectingI] = createSignal(0);
 
   return <Row style={{ gap: "16px" }}>
     <Column style={{ gap: "6px", width: "460px" }}>{
-      stSongs.map((s, i) => SongItem({
-        song: { ...s, selecting: selectingI() === i },
-        onClick: () => setSelectingI(i)
-      }))
+      songs.map((song, i) => <SongItem
+        song={song} selecting={selectingI() === i}
+        onClick={() => setSelectingI(i)}
+      />)
     }</Column>
-    <CurrentSong {...stSongs[selectingI()]} />
+    <CurrentSong {...songs[selectingI()]} />
   </Row>;
 };
 
 
-export default SongSelect;;
+export default SongSelect;

@@ -2,14 +2,15 @@ import { Component } from "solid-js";
 import { columnStyle } from "../../components/layout";
 
 export const SongItem: Component<{
-  song: SongWithJotai;
+  song: Song;
+  selecting: boolean,
   onClick: () => void;
 }> = (p) => <div
   role="button"
   onclick={p.onClick}
   style={{
     ...columnStyle,
-    background: p.song.selecting ? "darkblue" : undefined,
+    background: p.selecting ? "darkblue" : undefined,
     border: "solid 1px",
     padding: "8px"
   }}
