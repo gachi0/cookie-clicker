@@ -1,20 +1,18 @@
-import { css } from "../../styled-system/css";
+import { css } from "../../../styled-system/css";
 import { Component, createEffect, onCleanup } from "solid-js";
-import { Column, Row } from "../components/layout";
-import { auto, cookies, getClicks, getCost, RCSum, setAuto, setCookies, setShops, shops } from "../signals";
-import { Button, Label } from "../components/button";
-import { Shisetsu } from "../components/shisetsu";
-
+import { Column, Row } from "../../components/layout";
+import { auto, cookies, getClicks, getCost, RCSum, setAuto, setCookies, setShops, shops } from "./signals";
+import { KyokaButton, Label, Shisetsu } from "./shisetsu";
+import { BUTTON_CSS_ENABLE } from "../../components/button";
 
 const Page: Component = () => {
 
   createEffect(() => {
 
-    const interval = setInterval(() => {
-      setCookies(
-        cookies() + RCSum(auto)
-      );
-    }, 1000);
+    const interval = setInterval(
+      () => setCookies(c => c + RCSum(auto)),
+      1000
+    );
 
     onCleanup(() => {
       clearInterval(interval);
@@ -36,13 +34,14 @@ const Page: Component = () => {
     <p class={css({ fontSize: 50 })}>
       {cookies().toString()}
     </p>
-    <Button
-      children="クッキー"
-      style={{ height: "72px", "font-size": "32px" }}
-      callback={() => {
+    <button
+      style={{
+        ...BUTTON_CSS_ENABLE, height: "72px", "font-size": "32px",
+      }}
+      onclick={() => {
         setCookies(cookies() + getClicks(shops));
       }}
-    />
+    >クッキー</button>
     <Row style={{ gap: "8px" }}>
       <Column>
         <p class={css({ fontSize: "24px" })}>クリック強化</p>
@@ -59,12 +58,13 @@ const Page: Component = () => {
         {auto.map((v, i) => <Shisetsu
           store={v}
           onclick={() => {
-            setCookies(cookies() - getCost(v));
+            setCookies(c => c - getCost(v));
             setAuto(i, "count", v.count + 1n);
           }}
         />)}
       </Column>
     </Row>
+
   </Column>;
 };
 

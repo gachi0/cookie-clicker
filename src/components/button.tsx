@@ -4,48 +4,25 @@ import { A } from "@solidjs/router";
 import { RouteNames } from "../paths";
 
 
-const BUTTON_CSS: Styles = {
-  borderRadius: 8,
-  paddingInline: 3,
-  paddingBlock: 1,
-  textAlign: "center",
+export const BUTTON_CSS: JSX.CSSProperties = {
+  "border-radius": "8px",
+  "padding-inline": "3px",
+  "padding-block": "1px",
+  "text-align": "center",
 };
 
-const BUTTON_CSS_ENABLE: Styles = {
-  ...BUTTON_CSS,
-  backgroundColor: "blue.500",
-  _hover: {
-    backgroundColor: "blue.700",
-    cursor: "pointer",
-  },
+export const BUTTON_CSS_ENABLE: JSX.CSSProperties = {
+  ...BUTTON_CSS, "background-color": "slateblue",
 };
 
-const BUTTON_CSS_DISABLE: Styles = {
-  ...BUTTON_CSS,
-  backgroundColor: "gray.500",
-};
-
-export const Button: Component<{
-  children: JSXElement;
-  disabled?: boolean;
-  style?: JSX.CSSProperties;
-  callback?: VoidFunction;
-}> = (props) => {
-  return <button
-    disabled={props.disabled}
-    class={props.disabled
-      ? css(BUTTON_CSS_DISABLE)
-      : css(BUTTON_CSS_ENABLE)}
-    style={props.style}
-    onclick={props.callback}
-    children={props.children}
-  />;
+export const BUTTON_CSS_DISABLE: JSX.CSSProperties = {
+  ...BUTTON_CSS, "background-color": "gray",
 };
 
 export const LinkURL: ParentComponent<{
   href: string;
 }> = (props) => <A
-  class={css(BUTTON_CSS_ENABLE)}
+  style={BUTTON_CSS_ENABLE}
   href={props.href}
   children={props.children}
 />;
@@ -53,18 +30,4 @@ export const LinkURL: ParentComponent<{
 export const Link: ParentComponent<{
   href: RouteNames;
 }> = (p) => <LinkURL {...p} />;
-
-export const Label: Component<{
-  label: string, txt: string;
-}> = (props) => <span>
-  <span class={css({
-    fontSize: 12,
-    marginRight: 1,
-  })}>
-    {props.label}:
-  </span>
-  <span class={css({ color: "#aaffff" })}>
-    {props.txt}
-  </span>
-</span>;
 

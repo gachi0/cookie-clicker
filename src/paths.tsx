@@ -10,6 +10,8 @@ const createRoutes = <K extends string>(
 export const routes = createRoutes({
     "/": () => import("./pages/top"),
     "/cookie": () => import("./pages/cookieclicker"),
+    "/chat": () => import("./pages/chat/chat"),
+    "/rythm": () => import("./pages/rythm"),
 });
 
-export type RouteNames = keyof typeof routes;
+export type RouteNames = keyof typeof routes;   

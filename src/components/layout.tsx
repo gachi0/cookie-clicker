@@ -30,3 +30,8 @@ export const Row: ParentComponent<
 >
   {props.children}
 </div>;
+
+export const columnStyle = {
+  "display": "flex",
+  "flex-direction": "column",
+} as const;
