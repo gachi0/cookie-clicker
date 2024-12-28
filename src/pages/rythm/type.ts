@@ -10,5 +10,3 @@ type Chart = {
   name: string;
   lv: number;
 };
-
-type SongWithJotai = Song & { selecting?: boolean; };

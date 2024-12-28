@@ -3,7 +3,7 @@ import { render } from 'solid-js/web';
 import { HashRouter, Route } from '@solidjs/router';
 import { lazy, ParentComponent } from 'solid-js';
 import "./index.css";
-import { routes } from './paths';
+import { BAR_HEIGHT, routes } from './consts';
 import { columnStyle } from './components/layout';
 
 const root = document.getElementById('root');
@@ -15,14 +15,17 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 }
 
 const App: ParentComponent = (props) => <div
-  style={{ 'background': "#111122", ...columnStyle }}
+  style={{
+    ...columnStyle, 'background': "#111122",
+  }}
 >
   <header
     style={{
+      height: `${BAR_HEIGHT}px`,
       background: "#113388",
       'display': 'flex',
       "justify-content": "space-around",
-      "margin-bottom": "16px"
+      "align-items": "center",
     }}
   >
     <a href={'/'}>TOP</a>
@@ -30,11 +33,10 @@ const App: ParentComponent = (props) => <div
     <a href={'/rythm'}>リズムゲーム</a>
   </header>
 
-
-
   <main style={{ 'display': "flex", "justify-content": "center" }}>
     {props.children}
   </main>
+
 </div>;
 
 render(() => <HashRouter

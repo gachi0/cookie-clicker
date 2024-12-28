@@ -1,4 +1,4 @@
-import { Component } from "solid-js";
+import { Component, For } from "solid-js";
 import { columnStyle } from "../../components/layout";
 
 export const SongItem: Component<{
@@ -7,12 +7,12 @@ export const SongItem: Component<{
   onClick: () => void;
 }> = (p) => <div
   role="button"
-  onclick={p.onClick}
+  onClick={p.onClick}
   style={{
     ...columnStyle,
     background: p.selecting ? "darkblue" : undefined,
     border: "solid 1px",
-    padding: "8px"
+    padding: "8px",
   }}
 >
 
@@ -30,11 +30,23 @@ export const SongItem: Component<{
     "text-align": "center",
   }}>
     {p.song.charts.map(c => <div>
-      <div
-        style={{ "font-size": "12px" }}
-      >{c.name}</div>
+      <div style={{ "font-size": "12px" }}>{c.name}</div>
       <div style={{ "font-size": "18px" }}>{c.lv}</div>
     </div>)}
   </div>
 
+</div>;
+
+export const SongItems: Component<{
+  songs: Song[],
+  selectI: number,
+  onSongClick: (s: Song, i: number) => void;
+}> = (p) => <div
+  style={{ ...columnStyle, gap: "6px", }}
+>
+  {p.songs.map((s, i) => <SongItem
+    song={s}
+    selecting={p.selectI === i}
+    onClick={() => p.onSongClick(s, i)}
+  />)}
 </div>;
