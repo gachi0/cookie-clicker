@@ -24,4 +24,32 @@ export const songs: Song[] = [
     id: 3, name: "レモンだ？貴様この野郎", artist: "北島三郎 vs 米津玄師",
     charts: [{ id: 1, lv: 14, name: "EXPERT" }, { id: 2, lv: 20, name: "OVERJOY" }],
   },
+  {
+    id: 3, name: "レモンだ？貴様この野郎", artist: "北島三郎 vs 米津玄師",
+    charts: [{ id: 1, lv: 14, name: "EXPERT" }, { id: 2, lv: 20, name: "OVERJOY" }],
+  },
+  {
+    id: 3, name: "レモンだ？貴様この野郎", artist: "北島三郎 vs 米津玄師",
+    charts: [{ id: 1, lv: 14, name: "EXPERT" }, { id: 2, lv: 20, name: "OVERJOY" }],
+  },
+  {
+    id: 3, name: "レモンだ？貴様この野郎", artist: "北島三郎 vs 米津玄師",
+    charts: [{ id: 1, lv: 14, name: "EXPERT" }, { id: 2, lv: 20, name: "OVERJOY" }],
+  },
+  {
+    id: 3, name: "レモンだ？貴様この野郎", artist: "北島三郎 vs 米津玄師",
+    charts: [{ id: 1, lv: 14, name: "EXPERT" }, { id: 2, lv: 20, name: "OVERJOY" }],
+  },
+  {
+    id: 3, name: "レモンだ？貴様この野郎", artist: "北島三郎 vs 米津玄師",
+    charts: [{ id: 1, lv: 14, name: "EXPERT" }, { id: 2, lv: 20, name: "OVERJOY" }],
+  },
+  {
+    id: 3, name: "レモンだ？貴様この野郎", artist: "北島三郎 vs 米津玄師",
+    charts: [{ id: 1, lv: 14, name: "EXPERT" }, { id: 2, lv: 20, name: "OVERJOY" }],
+  },
+  {
+    id: 3, name: "レモンだ？貴様この野郎", artist: "北島三郎 vs 米津玄師",
+    charts: [{ id: 1, lv: 14, name: "EXPERT" }, { id: 2, lv: 20, name: "OVERJOY" }],
+  },
 ];

@@ -14,4 +14,6 @@ export const routes = createRoutes({
     "/rythm": () => import("./pages/rythm"),
 });
 
-export type RouteNames = keyof typeof routes;   
+export type RouteNames = keyof typeof routes;
+
+export const BAR_HEIGHT = 32;

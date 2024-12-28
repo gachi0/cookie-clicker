@@ -1,7 +1,7 @@
 import { Component, JSX, JSXElement, ParentComponent } from "solid-js";
 import { css, Styles } from "../../styled-system/css";
 import { A } from "@solidjs/router";
-import { RouteNames } from "../paths";
+import { RouteNames } from "../consts";
 
 
 export const BUTTON_CSS: JSX.CSSProperties = {
